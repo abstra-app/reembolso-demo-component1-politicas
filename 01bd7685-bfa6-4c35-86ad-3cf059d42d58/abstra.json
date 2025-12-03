@@ -1,0 +1,123 @@
+{
+  "components": [],
+  "forms": [],
+  "home": {
+    "access_control": {
+      "is_public": false,
+      "required_roles": []
+    }
+  },
+  "hooks": [],
+  "jobs": [],
+  "scripts": [
+    {
+      "file": "step1_montar_contexto_para_agente.py",
+      "id": "c87f3f70-7504-49fe-b190-1939f0c18d03",
+      "input": true,
+      "is_initial": true,
+      "output": false,
+      "title": "1. Montar Contexto para Agente",
+      "transitions": [
+        {
+          "id": "2457b5e3-6511-4196-8d49-8af9079d12ce",
+          "target_id": "775c4971-e7a8-411f-bbff-a571a6f2568e",
+          "target_type": "scripts",
+          "task_type": "contexto_montado",
+          "type": "task"
+        }
+      ],
+      "workflow_position": [
+        -240,
+        135
+      ]
+    },
+    {
+      "file": "step2_agente_plano_e_resposta.py",
+      "id": "775c4971-e7a8-411f-bbff-a571a6f2568e",
+      "input": false,
+      "is_initial": false,
+      "output": false,
+      "title": "2. Agente Plano e Resposta",
+      "transitions": [
+        {
+          "id": "a28f635c-92d9-4034-b576-1042ad583cdf",
+          "target_id": "10cb0a4a-341e-44eb-b5ce-8132cbcc04b2",
+          "target_type": "scripts",
+          "task_type": "resposta_ia_gerada",
+          "type": "task"
+        }
+      ],
+      "workflow_position": [
+        90,
+        255
+      ]
+    },
+    {
+      "file": "step3_validar_acoes_contra_politica.py",
+      "id": "10cb0a4a-341e-44eb-b5ce-8132cbcc04b2",
+      "input": false,
+      "is_initial": false,
+      "output": false,
+      "title": "3. Validar Acoes Contra Politica",
+      "transitions": [
+        {
+          "id": "201713c3-d253-4ef6-a1be-17a186e8bf20",
+          "target_id": "76e4b74c-a594-4c20-ae04-8b4a5984c1de",
+          "target_type": "scripts",
+          "task_type": "acoes_validadas",
+          "type": "task"
+        }
+      ],
+      "workflow_position": [
+        465,
+        105
+      ]
+    },
+    {
+      "file": "step4_avaliar_qualidade_resposta.py",
+      "id": "76e4b74c-a594-4c20-ae04-8b4a5984c1de",
+      "input": false,
+      "is_initial": false,
+      "output": false,
+      "title": "4. Avaliar Qualidade Resposta",
+      "transitions": [
+        {
+          "id": "fad0aeb9-ed45-4511-972a-01bf2ed497b9",
+          "target_id": "7ca3133e-7624-4901-b479-ead962673bb0",
+          "target_type": "scripts",
+          "task_type": "resposta_avaliada",
+          "type": "task"
+        }
+      ],
+      "workflow_position": [
+        660,
+        345
+      ]
+    },
+    {
+      "file": "step5_montar_output_final.py",
+      "id": "7ca3133e-7624-4901-b479-ead962673bb0",
+      "input": false,
+      "is_initial": false,
+      "output": true,
+      "title": "5. Montar Output Final",
+      "transitions": [],
+      "workflow_position": [
+        900,
+        195
+      ]
+    }
+  ],
+  "version": "17.0",
+  "workspace": {
+    "brand_name": "Abstra Project",
+    "favicon_url": "./favicon.ico",
+    "font_color": null,
+    "font_family": null,
+    "language": "en",
+    "logo_url": "./logo.png",
+    "main_color": null,
+    "name": "Workspace",
+    "theme": null
+  }
+}
