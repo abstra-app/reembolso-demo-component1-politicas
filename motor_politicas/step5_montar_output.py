@@ -46,16 +46,14 @@ print(f"  Data viagem: {payload['data_viagem']}")
 print(f"  Data solicitacao: {payload['data_solicitacao']}")
 print(f"  Dias antes: {payload['dias_antes']}")
 
-# Este output pode ser enviado para:
-# - Workflow pai (orquestrador)
-# - Workflow Filho B (AgentePlanoResolucao)
-# - Sistema de notificacoes
-# - Banco de dados para auditoria
+# Envia o output final para o proximo stage/workflow
+print("\n>>> Enviando output final...")
+send_task(
+    "decisao_final",
+    output_decisao
+)
 
-# Exemplo: enviar para workflow pai ou proximo stage
-# send_task("workflow_pai", output_decisao)
-
-print("\nOutput montado com sucesso!")
+print("\nOutput montado e enviado com sucesso!")
 print("Workflow Motor de Politicas de Pos-Venda concluido.")
 
 # Completa a task atual
