@@ -1,0 +1,123 @@
+{
+  "components": [],
+  "forms": [],
+  "home": {
+    "access_control": {
+      "is_public": false,
+      "required_roles": []
+    }
+  },
+  "hooks": [],
+  "jobs": [],
+  "scripts": [
+    {
+      "file": "motor_politicas/step1_normalizar_entrada.py",
+      "id": "b770a726-5b77-417a-a59c-36d273d54e4f",
+      "input": true,
+      "is_initial": true,
+      "output": false,
+      "title": "1. Normalizar Entrada",
+      "transitions": [
+        {
+          "id": "3d0108bc-9d49-4775-8b2c-d53c48674d6a",
+          "target_id": "f8c0f959-72d2-453d-9872-f7a943e289fb",
+          "target_type": "scripts",
+          "task_type": "calcular_contexto_tempo",
+          "type": "task"
+        }
+      ],
+      "workflow_position": [
+        -450,
+        -45
+      ]
+    },
+    {
+      "file": "motor_politicas/step2_calcular_contexto_tempo.py",
+      "id": "f8c0f959-72d2-453d-9872-f7a943e289fb",
+      "input": false,
+      "is_initial": false,
+      "output": false,
+      "title": "2. Calcular Contexto Tempo",
+      "transitions": [
+        {
+          "id": "b2687a88-21a1-4a28-be16-9efd6b25bf7c",
+          "target_id": "2cda3190-3045-4179-ad5f-b86b4d1e46c2",
+          "target_type": "scripts",
+          "task_type": "classificar_tipo_motivo",
+          "type": "task"
+        }
+      ],
+      "workflow_position": [
+        -315,
+        150
+      ]
+    },
+    {
+      "file": "motor_politicas/step3_classificar_tipo_motivo.py",
+      "id": "2cda3190-3045-4179-ad5f-b86b4d1e46c2",
+      "input": false,
+      "is_initial": false,
+      "output": false,
+      "title": "3. Classificar Tipo e Motivo",
+      "transitions": [
+        {
+          "id": "c1c06871-4103-4be8-815e-1d75b9163707",
+          "target_id": "06b60e3d-974a-410f-86d2-14a43bb7422d",
+          "target_type": "scripts",
+          "task_type": "aplicar_politicas",
+          "type": "task"
+        }
+      ],
+      "workflow_position": [
+        0.026949243322463935,
+        -0.1695035050382163
+      ]
+    },
+    {
+      "file": "motor_politicas/step4_aplicar_politicas.py",
+      "id": "06b60e3d-974a-410f-86d2-14a43bb7422d",
+      "input": false,
+      "is_initial": false,
+      "output": false,
+      "title": "4. Aplicar Pol\u00edticas",
+      "transitions": [
+        {
+          "id": "1ea65f05-e7ab-421a-a74b-e994a42c58bf",
+          "target_id": "3166ee69-07a6-4be2-9caa-c2f03dd9884c",
+          "target_type": "scripts",
+          "task_type": "montar_output",
+          "type": "task"
+        }
+      ],
+      "workflow_position": [
+        450,
+        0
+      ]
+    },
+    {
+      "file": "motor_politicas/step5_montar_output.py",
+      "id": "3166ee69-07a6-4be2-9caa-c2f03dd9884c",
+      "input": false,
+      "is_initial": false,
+      "output": true,
+      "title": "5. Montar Output Decis\u00e3o",
+      "transitions": [],
+      "workflow_position": [
+        765,
+        240
+      ]
+    }
+  ],
+  "version": "17.0",
+  "workspace": {
+    "brand_name": "Abstra Project",
+    "favicon_url": "./favicon.ico",
+    "font_color": null,
+    "font_family": null,
+    "language": "en",
+    "logo_url": "./logo.png",
+    "main_color": null,
+    "name": "Workspace",
+    "theme": null
+  }
+}
